@@ -1,3 +1,21 @@
 <html>
-<h1>These are my HTML skills, yes</h1>
+<head>
+<script>
+function copyAndCapitalize() {
+  // get the value of the left textarea
+  var leftText = document.getElementById("left").value;
+  // capitalize the text
+  var rightText = leftText.toUpperCase();
+  // set the value of the right textarea
+  document.getElementById("right").value = rightText;
+}
+</script>
+</head>
+<body>
+<h1>HTML Textarea Example</h1>
+<p>Enter some text in the left textarea and click the button to copy and capitalize it in the right textarea.</p>
+<textarea id="left" rows="10" cols="30"></textarea>
+<button onclick="copyAndCapitalize()">Copy and Capitalize</button>
+<textarea id="right" rows="10" cols="30" readonly></textarea>
+</body>
 </html>
