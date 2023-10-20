@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Translangtor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        #password-input {
+            text-align: center;
+            padding: 40px;
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        #password {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        #password::placeholder {
+            color: #ccc;
+        }
+
+        #password:focus {
+            outline: none;
+        }
+
+        #translation-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #input-box, #translation-box {
+            flex: 1;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+        }
+
+        #user-input, #translation {
+            flex: 1;
+            border: none;
+            outline: none;
+            background: transparent;
+            resize: none;
+        }
+
+        #user-input[contenteditable], #translation[contenteditable] {
+            min-height: 100%;
+            padding: 5px;
+        }
+
+        #user-input[contenteditable]:empty::before, #translation[contenteditable]:empty::before {
+            content: attr(placeholder);
+            color: #ccc;
+        }
+
+        #translate-button {
+            text-align: center;
+            padding: 20px;
+            background-color: #007bff;
+        }
+
+        button {
+            width: 100%;
+            padding: 20px 20px; /* Increase button height */
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            #translation-container {
+                flex-direction: column;
+            }
+
+            #input-box, #translation-box {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="password-input">
+        <input id="password" placeholder="Enter password">
+    </div>
+    <div id="translation-container">
+        <div id="input-box">
+            <div id="user-input" contenteditable="true" placeholder="Enter text to translate"></div>
+        </div>
+        <div id="translation-box">
+            <div id="translation" contenteditable="false" readonly></div>
+        </div>
+    </div>
+    <div id="translate-button">
+        <button onclick="translateText()">Translang</button>
+    </div>
+</div>
+
+<script>
+    function translateText() {
+        const password = document.getElementById('password').value;
+        const userInput = encodeURIComponent(document.getElementById('user-input').textContent);
+        const translationBox = document.getElementById('translation');
+
+        // Replace with your server URL
+        const serverURL = 'http://141.147.9.175:8000';
+
+        // Construct the GET request URL
+        const requestURL = `${serverURL}?password=${password}&content=${userInput}`;
+
+        // Send a GET request
+        fetch(requestURL)
+            .then(response => response.text())
+            .then(data => {
+                translationBox.textContent = data;
+            })
+            .catch(error => {
+                translationBox.textContent = 'Translation request failed.';
+            });
+    }
+</script>
+</body>
+</html>
