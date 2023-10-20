@@ -1,21 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
-<script>
-function copyAndCapitalize() {
-  // get the value of the left textarea
-  var leftText = document.getElementById("left").value;
-  // capitalize the text
-  var rightText = leftText.toUpperCase();
-  // set the value of the right textarea
-  document.getElementById("right").value = rightText;
-}
-</script>
+    <title>Simple HTML Website</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-<h1>HTML Textarea Example</h1>
-<p>Enter some text in the left textarea and click the button to copy and capitalize it in the right textarea.</p>
-<textarea id="left" rows="10" cols="30"></textarea>
-<button onclick="copyAndCapitalize()">Copy and Capitalize</button>
-<textarea id="right" rows="10" cols="30" readonly></textarea>
+    <input type="text" id="password" placeholder="Enter password here"><br>
+    <textarea id="editable" placeholder="Editable content here"></textarea>
+    <textarea id="nonEditable" readonly placeholder="Non-editable content here"></textarea><br>
+    <button id="sendRequest">Send Request</button>
+
+    <script>
+        $(document).ready(function(){
+            $("#sendRequest").click(function(){
+                var password = $("#password").val();
+                var content = $("#editable").val();
+                var url = "http://141.147.9.175:8000?password=" + password + "&content=" + content;
+                $.get(url, function(data, status){
+                    $("#nonEditable").val(data);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
