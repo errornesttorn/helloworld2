@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enhanced Simple Website</title>
+<link rel="stylesheet" type="text/css" href="styles.css"> <!-- Assuming you have a separate CSS file -->
+</head>
+<body>
+<header>
+    <div class="logo">Logo Here</div>
+    <ul class="navigation">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</header>
+<main>
+    <div class="banner">
+        <h1>Welcome to Our Website!</h1>
+        <p>Discover our services and offers.</p>
+    </div>
+    <div class="full-width-banner">
+        <div class="full-width-banner-text">
+            <h1>Explore Our Expertise</h1>
+            <p>Leading innovations and solutions tailored for you.</p>
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="content-text">
+            <h2>About Our Company</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+            <a href="#" class="button-download">Download Company Profile</a>
+        </div>
+        <div class="content-image">
+            <img src="https://via.placeholder.com/600x400" alt="About Our Company">
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="content-text">
+            <h2>Our Services</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+            <ul class="list-dotted">
+                <li>Service 1</li>
+                <li>Service 2</li>
+                <li>Service 3</li>
+            </ul>
+        </div>
+        <div class="content-image">
+            <img src="fish_drip.webp" alt="Our Services">
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="content-text">
+            <h2>Contact Us</h2>
+            <p class="quote">"We're always ready to help you. Reach out to us via email or phone, and we'll discuss your needs in detail."</p>
+        </div>
+        <div class="content-image">
+            <img src="https://via.placeholder.com/600x400" alt="Contact Us">
+        </div>
+    </div>
+	<div class="qa-section">
+		<h2>Frequently Asked Questions</h2>
+		<div class="question" onclick="toggleAnswer('answer1')">
+			<h3>What services do you offer?</h3>
+			<p id="answer1" class="answer">We offer a wide range of services including but not limited to web development, digital marketing, and graphic design.</p>
+		</div>
+		<div class="question" onclick="toggleAnswer('answer2')">
+			<h3>How can we contact you?</h3>
+			<p id="answer2" class="answer">You can contact us via email at contact@example.com or phone at (123) 456-7890.</p>
+		</div>
+		<div class="question" onclick="toggleAnswer('answer3')">
+			<h3>Where are you located?</h3>
+			<p id="answer3" class="answer">Our office is located at 123 Business Rd, Business City, BC 12345.</p>
+		</div>
+	</div>
+	<div class="full-width-banner-two">
+        <div class="full-width-banner-two-text">
+            <h1>Explore Our Expertise</h1>
+            <p>Leading innovations and solutions tailored for you.</p>
+        </div>
+    </div>
+</main>
+<div id="popup" class="popup" style="display:none;">
+    <div class="popup-content">
+        <span class="close">&times;</span>
+        <p id="popupText">WARNING: This information is sensitive. Do you wish to proceed?</p>
+        <button id="confirmBtn">Confirm</button>
+    </div>
+</div>
+<footer>
+	© 2024 A website. No rights reserved. We don't accept reservations.
+    <button id="secretBtn">Sign a petition</button>
+</footer>
+<script>
+function toggleAnswer(id) {
+    var element = document.getElementById(id);
+    if (element.style.display === 'block') {
+        element.style.display = 'none';
+    } else {
+        element.style.display = 'block';
+    }
+}
+
+</script>
+<script>
+document.getElementById('secretBtn').addEventListener('click', function() {
+    var popup = document.getElementById('popup');
+    var popupText = document.getElementById('popupText');
+    if (localStorage.getItem('confirmed')) {
+        popupText.textContent = "Secret Information: The sky is blue.";
+    } else {
+        popupText.textContent = "WARNING: This information is sensitive. Do you wish to proceed?";
+    }
+    popup.style.display = 'flex';
+});
+
+document.getElementById('confirmBtn').addEventListener('click', function() {
+    localStorage.setItem('confirmed', true);
+    document.getElementById('popupText').textContent = "Secret Information: The sky is blue.";
+	document.getElementById('confirmBtn').style.display = 'none';
+});
+
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('popup').style.display = 'none';
+});
+</script>
+</body>
+</html>

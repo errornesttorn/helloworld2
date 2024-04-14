@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog</title>
+<link rel="stylesheet" type="text/css" href="styles.css"> <!-- Assuming you have a separate CSS file -->
+<style>
+    /* Extend your existing CSS here, or link to a CSS file that includes these styles */
+    .blog-info { 
+        background-color: var(--secondary-color); 
+        color: white; 
+        padding: 20px; 
+        text-align: center; 
+    }
+
+    .blog-post {
+        background-color: #FFF;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+    .post-header {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .post-title { font-size: 24px; }
+    .post-date { font-size: 14px; color: #666; }
+    .post-category { font-size: 14px; color: var(--primary-color); }
+
+    .post-content { margin: 20px 0; }
+
+    .social-links { text-align: right; }
+    .social-links a { padding: 0 10px; }
+	
+	/* Reuse button styles and add specific styles for the copy link button */
+	.blog-post .social-links button {
+		padding: 8px 16px;
+		background-color: var(--primary-color);
+		color: white;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		margin-right: 10px;
+	}
+
+	.blog-post .social-links button:hover {
+		background-color: var(--button-hover-color);
+	}
+	
+	/* Ensure button width accommodates text change, or adjust styles as necessary */
+	.blog-post .social-links button {
+		min-width: 120px; /* Example: Set a minimum width to handle text size changes */
+		transition: all 0.3s ease; /* Smooth transition for text change */
+	}
+</style>
+</head>
+<body>
+<header>
+    <div class="header-left">
+        <div class="logo"><a href="index.html">deloreg.pl</a></div>
+    </div>
+    <ul class="navigation">
+        <li><a href="index.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="projects.html">Personalities</a></li>
+        <li><a href="contact.html">Death threats</a></li>
+        <li><a href="mental.html">Mental statement</a></li>
+    </ul>
+    <div class="header-right" align="right">
+        <button id="toggleColors">Dark mode</button>
+    </div>
+</header>
+<main>
+    <!--div class="blog-info">
+        <h1>Welcome to Our Blog</h1>
+        <p>Latest insights and stories from our company.</p>
+    </div> -->
+
+    <!-- Blog Template 1 -->
+    <!--<div class="blog-post" id="post1">
+		<div class="post-header">
+			<h2 class="post-title">First Blog Post</h2>
+			<span class="post-date">Published on: January 1, 2024</span> |
+			<span class="post-category">Category: Tech</span>
+		</div>
+		<div class="post-content">
+			<p>This is the content of the first blog post. Here you can write the text of your article or include images and other media.</p>
+		</div>
+		<div class="social-links">
+			<button onclick="copyLink('post1', this)">Copy Link to Post</button>
+			<a href="#">Facebook</a>
+			<a href="#">Twitter</a>
+			<a href="#">LinkedIn</a>
+		</div>
+	</div>-->
+
+    <!-- Blog Post 1 -->
+    <div class="blog-post" id="post1">
+		<div class="post-header">
+			<h2 class="post-title">My Little Pony - Philosophical analysis</h2>
+			<span class="post-date">Published on: March 1, 2024</span> |
+			<span class="post-category">Category: philosophy</span>
+		</div>
+		<div class="post-content">
+			<p>Spike. Why are you so small and weak? Haven't you read Jordan Peterson books I gave you for your birthsday? To become a man you need to clean your room and slay a dragon. You are a dragon, Spike. Grow up and kill yourself already<img src="spike_peterson.png" alt="spike_peterson.png"></p>
+		</div>
+		<div class="social-links">
+			<button onclick="copyLink('post1', this)">Copy Link to Post</button>
+		</div>
+	</div>
+
+    <!-- Blog Post 2 -->
+    <div class="blog-post" id="post2">
+		<div class="post-header">
+			<h2 class="post-title">Warsaw public transportation tribute</h2>
+			<span class="post-date">Published on: July 1, 2023</span> |
+			<span class="post-category">Category: traveling</span>
+		</div>
+		<div class="post-content">
+			<p>အထက်တန်းစား ဘားသခင်များသည် အမှိုက်ကွင်းကို လုယူကာ ရန်ဖြစ်ခဲ့ကြသည်။
+သေခြင်းတရား၏ မှော်ပညာသည် ၎င်းတို့အား စည်းစိမ်ဥစ္စာများ ရရှိနိုင်စေမည်ဟု အချို့က ယုံကြည်ကြပြီး မှော်ပညာကို ဖျက်ဆီးပစ်ရန် ဆုံးဖြတ်ထားသူများနှင့် မှော်ပညာပိုင်သည့် ဂန္ထဝင် မစ္စတာ Szmoł ကို တစ်ဦးတည်းသာ လုပ်ဆောင်နိုင်သည်ဟု အချို့က ယုံကြည်ကြသည်။
+ပရောဖက်ပြုချက်များသည် အမြဲအမှန်တကယ်ဖြစ်လာသည့် လူငယ်ပရောဖက်ပြုချက်တစ်ခုသည် အခကြေးငွေအနည်းငယ်ဖြင့် မစ္စတာ Szmołကို ရှာဖွေရမည့်နေရာကောင်းကို အရိပ်အမြွက်ပေးခဲ့သည်။ ဒါပေမယ့် သူတို့ Smol ကိုရလိုက်တဲ့အခါ Dust က မှော်အမှိုက်လက်စွပ်အကြောင်း ဘာမှမသိတဲ့အတွက် သူ့ကို အမွေဆက်ခံသူအဖြစ် သတ်မှတ်ခဲ့ကြပြီး အားလုံးလက်စွပ်ကို ရအောင်ယူခဲ့ရပါတယ်။ ထိုအချိန်တွင် ကံမကောင်းစွာဖြင့်၊ လူဆိုးများက လက်စွပ်ကို ခိုးယူကာ ထွက်ပြေးသွားကြသည်။ သို့သော်လည်း အဖွဲ့နှစ်ဖွဲ့လုံးက ၎င်းကို ပြန်လည်ရယူနိုင်ခဲ့ပြီး နောက်ဆုံးတိုက်ပွဲတွင် Mr. Rag သည် ယခု Mr. Makaroon အမည်ဖြင့် ထွက်ပေါ်လာခဲ့သည်။ သို့သော် မစ္စတာမာကာရွန်းသည် ဆိုးသွမ်းသူအဖြစ် အသွင်ပြောင်းကာ ၎င်း၏ မကောင်းသောအကြံအစည်များကို အကောင်အထည်ဖော်ရန် လက်စွပ်ကို ရယူလိုခဲ့သည်။ ကံမကောင်းစွာဖြင့်၊ လက်စွပ်ကို လူဆိုးများ ခိုးယူခံရပြီး တစ်ကြိမ်တစ်ခါမျှ ဖျက်ဆီးခံခဲ့ရသည်။ သို့သော် Mr. Makaroon သည် ဒေါသထွက်ပြီး လက်စားချေခြင်းဖြင့် Szmogils အားလုံးကို သတ်ခဲ့ပြီး အဓိကဇာတ်ကောင်များနှင့်အတူ မစ္စတာ Szmoł ၏ ဒုတိယနောက်ဆုံးတိုက်ပွဲကို စတင်ခဲ့သည်။
+တိုက်ပွဲအတွင်း Podkarzmatnik သေဆုံးခဲ့သည်။
+အဆုံး<img src="warsaw.png" alt="warsaw.png"></p>
+		</div>
+		<div class="social-links">
+			<button onclick="copyLink('post2', this)">Copy Link to Post</button>
+		</div>
+	</div>
+
+    
+</main>
+<div id="popup" class="popup" style="display:none;">
+    <div class="popup-content">
+        <span class="close">&times;</span>
+        <p id="popupText">Legal disclaimer:
+Blockclerk 系統是一種恥辱治理，旨在透過選舉系統逐一區塊地照顧我們的社區。 每個人都擁有3級肌肉、大腦和夢想力量：能量、協同和恥辱，但選舉系統鎖定了個人恥辱力量。 Blockclerk 系統將解鎖您的個人污名/夢想力量！
+
+
+街區職員是一個街區的業主，他是透過抽籤選中的。 那些喜歡成為他/她所在街區的每週政策通報者、專案協調員和有趣派對組織者的業主將把他們的名字寫在 Blockclerk 的抽獎上。 獲勝者將是他/她所在街區的街區職員。 他/她將使用家庭辦公室並透過捐贈獲得報酬。
+
+
+如果街區中的任何人反對街區職員，週末街區大會將舉行決定。 如果 51% 的人投票支持 Blockclerk 出局，則將進行新的 Blockclerk 抽籤。 如果沒有人反對，Blockclerk 會留下來，想待多久就待多久。
+
+
+Cityclerk是透過抽籤從城市Blockclerks中抽中的人。 如果有人反對該市書記官，則所有博克書記官將投票決定該市書記官下台或留任。
+
+Provinceclerk是透過抽籤從某個省的Cityclerks中抽籤的人。 如果有人反對省書記官，所有城市書記官將投票決定省書記官下台或留任。
+
+
+聯邦書記官是透過抽籤從一個國家的省級書記官中抽取的人。 如果有人反對聯邦書記官，所有省書記官將投票決定聯邦書記官下台或留任。
+For additional information please visit <a href="https://wordpress.com/advertising-program-optout/" class="styled-link">Advertising on WordPress.com Sites and Sites in the WordAds Program</a></p>
+        <button id="confirmBtn">I have read the term and conditions and I agree</button>
+    </div>
+</div>
+<footer>
+	© 2024 A website. No rights reserved. We don't accept reservations.
+    <button id="secretBtn">Sign a petition</button>
+</footer>
+<script>
+function copyLink(postId, buttonElement) {
+    const postUrl = window.location.href.split('#')[0] + '#' + postId;
+    navigator.clipboard.writeText(postUrl)
+        .then(() => {
+            const originalText = buttonElement.textContent; // Save the original button text
+            buttonElement.textContent = 'Link Copied!'; // Update the button text to indicate success
+
+            // Reset the button text after 2 seconds
+            setTimeout(() => {
+                buttonElement.textContent = originalText;
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Failed to copy: ', err);
+            buttonElement.textContent = 'Failed to copy'; // Indicate failure on the button
+            setTimeout(() => {
+                buttonElement.textContent = originalText;
+            }, 2000);
+        });
+}
+</script>
+<script>
+document.getElementById('toggleColors').addEventListener('click', function() {
+    document.body.classList.toggle('inverted'); // Toggle the inverted class on the body
+    if (document.body.classList.contains('inverted')) {
+        this.textContent = 'White mode'; // Change button text to "Back to Normal Colors"
+        localStorage.setItem('colorMode', 'inverted'); // Save mode to local storage
+    } else {
+        this.textContent = 'Dark mode'; // Change button text back to "Reverse Colors"
+        localStorage.removeItem('colorMode'); // Remove the mode from local storage
+    }
+});
+
+// Check local storage and set color mode on page load
+window.onload = function() {
+    if (localStorage.getItem('colorMode') === 'inverted') {
+        document.body.classList.add('inverted');
+        document.getElementById('toggleColors').textContent = 'White mode';
+    }
+};
+</script>
+<script>
+document.getElementById('secretBtn').addEventListener('click', function() {
+    var popup = document.getElementById('popup');
+    var popupText = document.getElementById('popupText');
+    if (localStorage.getItem('confirmed')) {
+        popupText.innerHTML = "Thank you for signing <strong>the petition</strong>! We appreciate your <strong>sacrifice</strong>! And promise it will not be <strong>wasted</strong>!";
+		document.getElementById('confirmBtn').style.display = 'none';
+    } else {
+        popupText.innerHTML = '<strong>Legal disclaimer:</strong><br/>Blockclerk 系統是一種恥辱治理，旨在透過選舉系統逐一區塊地照顧我們的社區。 每個人都擁有3級肌肉、大腦和夢想力量：能量、協同和恥辱，但選舉系統鎖定了個人恥辱力量。 Blockclerk 系統將解鎖您的個人污名/夢想力量！<br/><br/><br/>街區職員是一個街區的業主，他是透過抽籤選中的。 那些喜歡成為他/她所在街區的每週政策通報者、專案協調員和有趣派對組織者的業主將把他們的名字寫在 Blockclerk 的抽獎上。 獲勝者將是他/她所在街區的街區職員。 他/她將使用家庭辦公室並透過捐贈獲得報酬。<br/><br/><br/>如果街區中的任何人反對街區職員，週末街區大會將舉行決定。 如果 51% 的人投票支持 Blockclerk 出局，則將進行新的 Blockclerk 抽籤。 如果沒有人反對，Blockclerk 會留下來，想待多久就待多久。<br/><br/><br/>Cityclerk是透過抽籤從城市Blockclerks中抽中的人。 如果有人反對該市書記官，則所有博克書記官將投票決定該市書記官下台或留任。<br/><br/><br/>Provinceclerk是透過抽籤從某個省的Cityclerks中抽籤的人。 如果有人反對省書記官，所有城市書記官將投票決定省書記官下台或留任。<br/><br/><br/>聯邦書記官是透過抽籤從一個國家的省級書記官中抽取的人。 如果有人反對聯邦書記官，所有省書記官將投票決定聯邦書記官下台或留任。<br/><br/>For additional information please visit <a href="https://wordpress.com/advertising-program-optout/" target="_blank" class="styled-link">Advertising on WordPress.com Sites and Sites in the WordAds Program</a>';
+    }
+    popup.style.display = 'flex';
+});
+
+document.getElementById('confirmBtn').addEventListener('click', function() {
+    localStorage.setItem('confirmed', true);
+    document.getElementById('popupText').innerHTML = "Thank you for signing <strong>the petition</strong>! We appreciate your <strong>sacrifice</strong>! And promise it will not be <strong>wasted</strong>!";
+	document.getElementById('confirmBtn').style.display = 'none';
+});
+
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('popup').style.display = 'none';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+/* Color scheme */
+    :root {
+        --primary-color: #8B4513; /* Dark brown */
+        --secondary-color: #A0522D; /* Sienna brown */
+        --text-color: #333;
+        --background-color: #EEEEEE; /* Cornsilk for light background. It used to be #FFF8DC */
+        --button-hover-color: #6A5ACD; /* Slate blue for hover state */
+    }
+
+    /* Basic font and layout settings */
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: var(--text-color); background: var(--background-color); }
+    a { color: var(--primary-color); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header styles */
+    header { background: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 24px; font-weight: bold; color: #000; }
+    .navigation { list-style: none; margin: 0; padding: 0; }
+    .navigation li { display: inline; margin-right: 10px; }
+    .navigation a { font-size: 16px; color: #000; }
+
+    /* Main content area and banners */
+    main { padding: 20px; }
+    .banner, .full-width-banner { text-align: center; padding: 20px; margin-bottom: 20px; color: #FFF; }
+    .banner { background-color: var(--primary-color); }
+    .full-width-banner { position: relative; height: 50vh; background: url('https://via.placeholder.com/1920x1080') no-repeat center center; background-size: cover; }
+    .full-width-banner-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; font-size: 24px; font-weight: bold; }
+    .full-width-banner-two { position: relative; height: 50vh; background: url('https://via.placeholder.com/1920x1080') no-repeat center center; background-size: cover; }
+    .full-width-banner-two-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; font-size: 24px; font-weight: bold; }
+
+    /* Section styling for content sections */
+    .content-section { display: flex; justify-content: space-between; margin-bottom: 20px; align-items: center; }
+    .content-section:nth-child(even) { flex-direction: row-reverse; }
+    .content-text, .content-image { flex: 1; padding: 20px; }
+    .content-text { background-color: #FFF; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 5px solid var(--primary-color); }
+    
+    /* Styles for images within content sections */
+    img { width: 100%; height: auto; }
+
+    /* Download button styling */
+    .button-download { padding: 10px 20px; background-color: var(--primary-color); color: white; border: none; border-radius: 5px; text-align: center; display: inline-block; }
+    .button-download:hover { background-color: var(--button-hover-color); cursor: pointer; }
+
+    /* List and quote styling */
+    .list-dotted { list-style-type: disc; padding-left: 20px; }
+    .quote { font-style: italic; border-left: 3px solid var(--primary-color); padding-left: 20px; margin-top: 20px; margin-bottom: 20px; }
+
+    /* Footer styling */
+    footer { background: white; text-align: center; padding: 10px 0; font-size: 14px; color: #000; }
+
+    /* Responsive design adjustments */
+    @media (max-width: 768px) {
+        .content-section { flex-direction: column; }
+        .content-section:nth-child(even) { flex-direction: column; }
+        .navigation a { font-size: 14px; }
+    }
+	
+	.qa-section {
+		margin-top: 20px;
+		padding: 20px;
+		background-color: var(--background-color);
+		box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	}
+
+	.question {
+		margin-bottom: 10px;
+		cursor: pointer;
+	}
+
+	.question h3 {
+		margin: 0;
+	}
+
+	.answer {
+		display: none;
+		padding: 10px;
+		margin-top: 5px;
+		background-color: #f9f9f9;
+		border-left: 3px solid var(--primary-color);
+	}
+	
+	.popup {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,0.5);
+		z-index: 2;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.popup-content {
+		background: white;
+		padding: 20px;
+		border-radius: 5px;
+		text-align: center;
+		width: 300px;
+		position: relative;
+	}
+
+	.close {
+		position: absolute;
+		top: 10px;
+		right: 15px;
+		font-size: 20px;
+		cursor: pointer;
+	}
+	
+	/* General button styling to match site theme */
+	button {
+		padding: 10px 20px;
+		background-color: var(--primary-color);
+		color: white;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 16px;
+	}
+
+	button:hover {
+		background-color: var(--button-hover-color);
+	}
+
+	/* Specific styles for the popup buttons for better distinction */
+	.popup button {
+		margin-top: 20px;
+		font-weight: bold;
+	}
+	
+	.inverted {
+		filter: invert(1);
+	}

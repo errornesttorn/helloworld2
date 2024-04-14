@@ -1,0 +1,182 @@
+/* Color scheme */
+    :root {
+        --primary-color: #8B4513; /* Dark brown */
+        --secondary-color: #A0522D; /* Sienna brown */
+        --text-color: #333;
+        --background-color: #EEEEEE; /* Cornsilk for light background. It used to be #FFF8DC */
+        --button-hover-color: #6A5ACD; /* Slate blue for hover state */
+    }
+
+    /* Basic font and layout settings */
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: var(--text-color); background: var(--background-color); }
+    a { color: var(--primary-color); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+		display: flex;
+		justify-content: space-between; /* Ensure content is spaced out to the edges */
+		align-items: center;
+		padding: 10px 20px;
+		background: #f0f0f0;
+	}
+
+	.header-left, .header-right {
+		flex: 1; /* Makes the left and right parts take up equal space */
+	}
+
+	.navigation {
+		display: flex;
+		justify-content: center; /* Centers navigation links */
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		flex: 2; /* Gives the navigation twice the space of sides */
+	}
+
+	.logo, .navigation li, #toggleColors {
+		padding: 5px 10px; /* Uniform padding for all clickable elements */
+	}
+
+	/* Ensuring button does not resize unexpectedly */
+	#toggleColors {
+		white-space: nowrap; /* Prevents button text from wrapping */
+	}
+
+    /* Main content area and banners */
+    main { padding: 20px; }
+    .banner, .full-width-banner { text-align: center; padding: 20px; margin-bottom: 20px; color: #FFF; }
+    .banner { background-color: var(--primary-color); }
+    .full-width-banner { position: relative; height: 50vh; background: url('france.png') no-repeat center center; background-size: cover; }
+    .full-width-banner-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; font-size: 24px; font-weight: bold; }
+    .full-width-banner-two { position: relative; height: 50vh; background: url('mesa-min.jpg') no-repeat center center; background-size: cover; }
+    .full-width-banner-two-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; font-size: 24px; font-weight: bold; }
+
+    /* Section styling for content sections */
+    .content-section { display: flex; justify-content: space-between; margin-bottom: 20px; align-items: center; }
+    .content-section:nth-child(even) { flex-direction: row-reverse; }
+    .content-text, .content-image { flex: 1; padding: 20px; }
+    .content-text { background-color: #FFF; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 5px solid var(--primary-color); }
+    
+    /* Styles for images within content sections */
+    img { width: 100%; height: auto; }
+
+    /* Download button styling */
+    .button-download { padding: 10px 20px; background-color: var(--primary-color); color: white; border: none; border-radius: 5px; text-align: center; display: inline-block; }
+    .button-download:hover { background-color: var(--button-hover-color); cursor: pointer; }
+
+    /* List and quote styling */
+    .list-dotted { list-style-type: disc; padding-left: 20px; }
+    .quote { font-style: italic; border-left: 3px solid var(--primary-color); padding-left: 20px; margin-top: 20px; margin-bottom: 20px; }
+
+	.styled-link {
+		color: var(--primary-color); /* Using the primary color variable from your site's theme */
+		font-weight: bold; /* Makes the link text bold */
+		text-decoration: none; /* Removes the underline */
+		transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition for hover effects */
+	}
+
+	.styled-link:hover, .styled-link:focus {
+		color: var(--button-hover-color); /* Change color on hover/focus for better visibility */
+		text-decoration: underline; /* Adds underline on hover/focus for emphasis */
+	}
+
+    /* Footer styling */
+    footer { background: white; text-align: center; padding: 10px 0; font-size: 14px; color: #000; }
+
+    /* Responsive design adjustments */
+    @media (max-width: 768px) {
+        .content-section { flex-direction: column; }
+        .content-section:nth-child(even) { flex-direction: column; }
+        .navigation a { font-size: 14px; }
+    }
+	
+	.qa-section {
+		margin-top: 20px;
+		padding: 20px;
+		background-color: var(--background-color);
+		box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	}
+
+	.question {
+		margin-bottom: 10px;
+		cursor: pointer;
+	}
+
+	.question h3 {
+		margin: 0;
+	}
+
+	.answer {
+		display: none;
+		padding: 10px;
+		margin-top: 5px;
+		background-color: #f9f9f9;
+		border-left: 3px solid var(--primary-color);
+	}
+	
+	.popup {
+		position: fixed; /* Ensures the popup is positioned relative to the viewport */
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 1000; /* Make sure this is higher than other elements */
+	}
+
+	.popup-content {
+		position: relative;
+		z-index: 1001; /* Ensure content is above the overlay */
+		background-color: white;
+		padding: 20px;
+		border-radius: 5px;
+		box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+		transform: none !important; /* Override any inherited transformations */
+	}
+	
+	.popup-content strong {
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+	.popup-content span {
+		font-size: 16px;
+		font-style: italic;
+	}
+
+	.close {
+		position: absolute;
+		top: 10px;
+		right: 15px;
+		font-size: 20px;
+		cursor: pointer;
+	}
+	
+	/* General button styling to match site theme */
+	button {
+		padding: 10px 20px;
+		background-color: var(--primary-color);
+		color: white;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 16px;
+	}
+
+	button:hover {
+		background-color: var(--button-hover-color);
+	}
+
+	/* Specific styles for the popup buttons for better distinction */
+	.popup button {
+		margin-top: 20px;
+		font-weight: bold;
+	}
+	
+	.inverted {
+		filter: invert(1);
+	}

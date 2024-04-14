@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog - Simple Website</title>
+<link rel="stylesheet" type="text/css" href="styles.css"> <!-- Assuming you have a separate CSS file -->
+<style>
+    /* Extend your existing CSS here, or link to a CSS file that includes these styles */
+    .blog-info { 
+        background-color: var(--secondary-color); 
+        color: white; 
+        padding: 20px; 
+        text-align: center; 
+    }
+
+    .blog-post {
+        background-color: #FFF;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+    .post-header {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .post-title { font-size: 24px; }
+    .post-date { font-size: 14px; color: #666; }
+    .post-category { font-size: 14px; color: var(--primary-color); }
+
+    .post-content { margin: 20px 0; }
+
+    .social-links { text-align: right; }
+    .social-links a { padding: 0 10px; }
+</style>
+</head>
+<body>
+<header>
+    <div class="logo">Logo Here</div>
+    <ul class="navigation">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</header>
+<main>
+    <div class="blog-info">
+        <h1>Welcome to Our Blog</h1>
+        <p>Latest insights and stories from our company.</p>
+    </div>
+
+    <!-- Blog Post 1 -->
+    <div class="blog-post">
+        <div class="post-header">
+            <h2 class="post-title">First Blog Post</h2>
+            <span class="post-date">Published on: January 1, 2024</span> |
+            <span class="post-category">Category: Tech</span>
+        </div>
+        <div class="post-content">
+            <p>This is the content of the first blog post. Here you can write the text of your article or include images and other media.</p>
+        </div>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </div>
+
+    
+</main>
+<div id="popup" class="popup" style="display:none;">
+    <div class="popup-content">
+        <span class="close">&times;</span>
+        <p id="popupText">WARNING: This information is sensitive. Do you wish to proceed?</p>
+        <button id="confirmBtn">Confirm</button>
+    </div>
+</div>
+<footer>
+    © 2024 Simple Website. All rights reserved.
+    <button id="secretBtn">Secret Information</button>
+</footer>
+<script>
+document.getElementById('secretBtn').addEventListener('click', function() {
+    var popup = document.getElementById('popup');
+    var popupText = document.getElementById('popupText');
+    if (localStorage.getItem('confirmed')) {
+        popupText.textContent = "Secret Information: The sky is blue.";
+		document.getElementById('confirmBtn').style.display = 'none';
+    } else {
+        popupText.textContent = "WARNING: This information is sensitive. Do you wish to proceed?";
+    }
+    popup.style.display = 'flex';
+});
+
+document.getElementById('confirmBtn').addEventListener('click', function() {
+    localStorage.setItem('confirmed', true);
+    document.getElementById('popupText').textContent = "Secret Information: The sky is blue.";
+	document.getElementById('confirmBtn').style.display = 'none';
+});
+
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('popup').style.display = 'none';
+});
+</script>
+</body>
+</html>

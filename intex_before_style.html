@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enhanced Simple Website</title>
+<style>
+    /* Color scheme */
+    :root {
+        --primary-color: #8B4513; /* Dark brown */
+        --secondary-color: #A0522D; /* Sienna brown */
+        --text-color: #333;
+        --background-color: #EEEEEE; /* Cornsilk for light background. It used to be #FFF8DC */
+        --button-hover-color: #6A5ACD; /* Slate blue for hover state */
+    }
+
+    /* Basic font and layout settings */
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: var(--text-color); background: var(--background-color); }
+    a { color: var(--primary-color); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header styles */
+    header { background: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 24px; font-weight: bold; color: #000; }
+    .navigation { list-style: none; margin: 0; padding: 0; }
+    .navigation li { display: inline; margin-right: 10px; }
+    .navigation a { font-size: 16px; color: #000; }
+
+    /* Main content area and banners */
+    main { padding: 20px; }
+    .banner, .full-width-banner { text-align: center; padding: 20px; margin-bottom: 20px; color: #FFF; }
+    .banner { background-color: var(--primary-color); }
+    .full-width-banner { position: relative; height: 50vh; background: url('https://via.placeholder.com/1920x1080') no-repeat center center; background-size: cover; }
+    .full-width-banner-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; font-size: 24px; font-weight: bold; }
+    .full-width-banner-two { position: relative; height: 50vh; background: url('https://via.placeholder.com/960x540') no-repeat center center; background-size: cover; }
+    .full-width-banner-two-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; font-size: 24px; font-weight: bold; }
+
+    /* Section styling for content sections */
+    .content-section { display: flex; justify-content: space-between; margin-bottom: 20px; align-items: center; }
+    .content-section:nth-child(even) { flex-direction: row-reverse; }
+    .content-text, .content-image { flex: 1; padding: 20px; }
+    .content-text { background-color: #FFF; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 5px solid var(--primary-color); }
+    
+    /* Styles for images within content sections */
+    img { width: 100%; height: auto; }
+
+    /* Download button styling */
+    .button-download { padding: 10px 20px; background-color: var(--primary-color); color: white; border: none; border-radius: 5px; text-align: center; display: inline-block; }
+    .button-download:hover { background-color: var(--button-hover-color); cursor: pointer; }
+
+    /* List and quote styling */
+    .list-dotted { list-style-type: disc; padding-left: 20px; }
+    .quote { font-style: italic; border-left: 3px solid var(--primary-color); padding-left: 20px; margin-top: 20px; margin-bottom: 20px; }
+
+    /* Footer styling */
+    footer { background: white; text-align: center; padding: 10px 0; font-size: 14px; color: #000; }
+
+    /* Responsive design adjustments */
+    @media (max-width: 768px) {
+        .content-section { flex-direction: column; }
+        .content-section:nth-child(even) { flex-direction: column; }
+        .navigation a { font-size: 14px; }
+    }
+	
+	.qa-section {
+		margin-top: 20px;
+		padding: 20px;
+		background-color: var(--background-color);
+		box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	}
+
+	.question {
+		margin-bottom: 10px;
+		cursor: pointer;
+	}
+
+	.question h3 {
+		margin: 0;
+	}
+
+	.answer {
+		display: none;
+		padding: 10px;
+		margin-top: 5px;
+		background-color: #f9f9f9;
+		border-left: 3px solid var(--primary-color);
+	}
+	
+	.popup {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,0.5);
+		z-index: 2;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.popup-content {
+		background: white;
+		padding: 20px;
+		border-radius: 5px;
+		text-align: center;
+		width: 300px;
+		position: relative;
+	}
+
+	.close {
+		position: absolute;
+		top: 10px;
+		right: 15px;
+		font-size: 20px;
+		cursor: pointer;
+	}
+	
+	/* General button styling to match site theme */
+	button {
+		padding: 10px 20px;
+		background-color: var(--primary-color);
+		color: white;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 16px;
+	}
+
+	button:hover {
+		background-color: var(--button-hover-color);
+	}
+
+	/* Specific styles for the popup buttons for better distinction */
+	.popup button {
+		margin-top: 20px;
+		font-weight: bold;
+	}
+</style>
+</head>
+<body>
+<header>
+    <div class="logo">Logo Here</div>
+    <ul class="navigation">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</header>
+<main>
+    <div class="banner">
+        <h1>Welcome to Our Website!</h1>
+        <p>Discover our services and offers.</p>
+    </div>
+    <div class="full-width-banner">
+        <div class="full-width-banner-text">
+            <h1>Explore Our Expertise</h1>
+            <p>Leading innovations and solutions tailored for you.</p>
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="content-text">
+            <h2>About Our Company</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+            <a href="#" class="button-download">Download Company Profile</a>
+        </div>
+        <div class="content-image">
+            <img src="https://via.placeholder.com/600x400" alt="About Our Company">
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="content-text">
+            <h2>Our Services</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+            <ul class="list-dotted">
+                <li>Service 1</li>
+                <li>Service 2</li>
+                <li>Service 3</li>
+            </ul>
+        </div>
+        <div class="content-image">
+            <img src="https://via.placeholder.com/600x400" alt="Our Services">
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="content-text">
+            <h2>Contact Us</h2>
+            <p class="quote">"We're always ready to help you. Reach out to us via email or phone, and we'll discuss your needs in detail."</p>
+        </div>
+        <div class="content-image">
+            <img src="https://via.placeholder.com/600x400" alt="Contact Us">
+        </div>
+    </div>
+	<div class="qa-section">
+		<h2>Frequently Asked Questions</h2>
+		<div class="question" onclick="toggleAnswer('answer1')">
+			<h3>What services do you offer?</h3>
+			<p id="answer1" class="answer">We offer a wide range of services including but not limited to web development, digital marketing, and graphic design.</p>
+		</div>
+		<div class="question" onclick="toggleAnswer('answer2')">
+			<h3>How can we contact you?</h3>
+			<p id="answer2" class="answer">You can contact us via email at contact@example.com or phone at (123) 456-7890.</p>
+		</div>
+		<div class="question" onclick="toggleAnswer('answer3')">
+			<h3>Where are you located?</h3>
+			<p id="answer3" class="answer">Our office is located at 123 Business Rd, Business City, BC 12345.</p>
+		</div>
+	</div>
+	<div class="full-width-banner-two">
+        <div class="full-width-banner-two-text">
+            <h1>Explore Our Expertise</h1>
+            <p>Leading innovations and solutions tailored for you.</p>
+        </div>
+    </div>
+</main>
+<div id="popup" class="popup" style="display:none;">
+    <div class="popup-content">
+        <span class="close">&times;</span>
+        <p id="popupText">WARNING: This information is sensitive. Do you wish to proceed?</p>
+        <button id="confirmBtn">Confirm</button>
+    </div>
+</div>
+<footer>
+    <button id="secretBtn">Sign a petition</button>
+</footer>
+<script>
+function toggleAnswer(id) {
+    var element = document.getElementById(id);
+    if (element.style.display === 'block') {
+        element.style.display = 'none';
+    } else {
+        element.style.display = 'block';
+    }
+}
+
+</script>
+<script>
+document.getElementById('secretBtn').addEventListener('click', function() {
+    var popup = document.getElementById('popup');
+    var popupText = document.getElementById('popupText');
+    if (localStorage.getItem('confirmed')) {
+        popupText.textContent = "Secret Information: The sky is blue.";
+    } else {
+        popupText.textContent = "WARNING: This information is sensitive. Do you wish to proceed?";
+    }
+    popup.style.display = 'flex';
+});
+
+document.getElementById('confirmBtn').addEventListener('click', function() {
+    localStorage.setItem('confirmed', true);
+    document.getElementById('popupText').textContent = "Secret Information: The sky is blue.";
+});
+
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('popup').style.display = 'none';
+});
+</script>
+</body>
+</html>

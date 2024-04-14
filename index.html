@@ -1,26 +1,189 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Simple HTML Website</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glasgow university of Massachusetts</title>
+<link rel="stylesheet" type="text/css" href="styles.css"> <!-- Assuming you have a separate CSS file -->
 </head>
 <body>
-    <input type="text" id="password" placeholder="Enter password here"><br>
-    <textarea id="editable" placeholder="Editable content here"></textarea>
-    <textarea id="nonEditable" readonly placeholder="Non-editable content here"></textarea><br>
-    <button id="sendRequest">Send Request</button>
+<header>
+    <div class="header-left">
+        <div class="logo"><a href="index.html">deloreg.pl</a></div>
+    </div>
+    <ul class="navigation">
+        <li><a href="index.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="projects.html">Personalities</a></li>
+        <li><a href="contact.html">Death threats</a></li>
+        <li><a href="mental.html">Mental statement</a></li>
+    </ul>
+    <div class="header-right" align="right">
+        <button id="toggleColors">Dark mode</button>
+    </div>
+</header>
+<main>
+    <div class="banner">
+        <h1>Glasgow university of Massachusetts</h1>
+        <p>unleashing the demon of <b><a href="https://en.wikipedia.org/wiki/Modern_monetary_theory" target="_blank">currency</a></b></p>
+    </div>
+    <div class="full-width-banner">
+        <div class="full-width-banner-text">
+            <h1><a href="Political manifesto demo-3.pdf" target="_blank" style="color: white">Political manifesto</a><a href="Political manifesto demo-2.pdf?force_download=True" class="button-download" target="_blank">Download</a></h1>
+            <p><a href="https://sci-hub.se/10.1086/422058" target="_blank" style="color: white">The Origin and Evolution of the Surfactant System in Fish: Insights
+into the Evolution of Lungs and Swim Bladders</a></p>
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="content-text">
+            <h2>About Our Company</h2>
+            <p>Revolutionazing the fishing industry. Using drones to fish. Forget about the early morning. Forget about the wet boats. <p class="quote">FishDrone™ delivering your pray directly to your mailbox.</p> Delivering straight to your driveway. Parkway. Sleep well knowing this.</p>
+            <a href="an_unknowed_error.html" class="button-download">Sign up to a newsletter!</a>
+        </div>
+        <div class="content-image">
+            <img src="HAPPY_MAN_3.png" alt="About Our Company">
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="content-text">
+            <h2>Products and Services</h2>
+            <p>FishDrone™, Inc™. Starting as a dream between two friends. The passion was always the drone. The sheer genius of """accidentally""" catching a fish while the rod """mysteriously""" being taped to the drone. We've since <a href="https://pl.bab.la/slownik/angielski-polski/vow" target="_blank" class="styled-link">woved</a> to change the fishing meta forever. Making it accessible to both tech enthusiasts and. Especially those who don't like the outsoorsy part, so in other words the - tech enthusiasts.</p>
+            <ul class="list-dotted">
+                <li><b>Fish-by-Drone Delivery Service:</b> Subscribe and don't even bother touching a rod. Don't even pet. Don't pat the rod. Choose us. Choose from <b>Surprise Me</b> or <b>Fish of the Week</b>. For the adventurous types who enjoy the mystery of the catch. Of the fishing spiderweb.</li>
+                <li><b>Custom Fishing Orders:</b> In a desparete need for an aquarium mate? Or you just don't eat much and need a dinner? Our drones are being treated with spetial modification bait and tackle to target the specifics. You will fill the special target form. Don't worry! The list of valid monsters is published under your nose. You don't get to choose sharks. And you will learn why.</li>
+                <li><b>Live-Stream Fishing Adventures:</b> Subscribe to <a href="https://www.youtube.com/@FishDrone" target="_blank" class="styled-link">our channel</a> and watch we fish. You can become a reason we stream. It's usuall not profitable until <a href="https://youtu.be/Y6jC6VaO3j0" target="_blank" class="styled-link">MrBeast makes a video.</a> <p class="quote">It's like sports, but you can eat the players. You will not be eaten. You have no game.</p></li>
+				<li><b>FishDrone™ Fishing Festivals:</b> Compete with other drones. You don't participate until you're a drone. Prizes for biggest catch, most fish, and a special award for any drone catching the mythical boot. Mythical heels. Mythical drip. You now know how the term originated. Mythical heels.</li>
+            </ul>
+        </div>
+        <div class="content-image">
+            <img src="channel.PNG" alt="Our Services">
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="content-text">
+            <h2>Marketing and Sales Strategy</h2>
+			<li><b>FishDrone™ Swag: </b> please refer to the visual.</li>
+            <h2>Funding Request</h2>
+			<p>We're seeking <b>$5 million</b> in seed funding to buy drones. Process is design. For that reason you will read the sentences. Designing waterproof fishing gear. Insuring our fleet against shark attacks. You will get treated fair in return. Exclusive access to <b>The Leage.</b> We call it <b>Catch of the Month</b> club. Provies you with rare cases of seafood so exotic, you will need to Google it. Google <b>Chondrocladia.</b> Google it. Google <b>Spongiforma Squarepantsii.</b> Google <b>Mountain Chicken.</b></p>
+        </div>
+		
+        <div class="content-image">
+            <img src="fish_drip_2.webp" alt="Contact Us">
+        </div>
+    </div>
+	<div class="qa-section">
+		<h2>Frequently Asked Questions</h2>
+		<div class="question" onclick="toggleAnswer('answer1')">
+			<h3>Conditions</h3>
+			<p id="answer1" class="answer">You qualify for student finance if you meet 1 of the following requirements. You must also meet 1 of these requirements to get only the student travel product.
+			<br/>- You have been living in the Netherlands for 5 consecutive years or more.
+			<br/>- You are a migrant worker. You work in the Netherlands for at least 32 hours a month or you have a monthly income of at least 50% of the social security norm.
+			<br/>- Your parent or partner has the nationality of an EU/EEA country or Switzerland and is, or was, a migrant worker. Your parent or partner works, or has worked, in the Netherlands for at least 32 hours per month. Or your parent or partner has, or had, a monthly income of at least 50% of the social security norm.
+			<br/>If you are a migrant worker, your employment contract must start on the 1st of the month. If your employment contract starts later, you won't be eligible for student finance until the next month.
+			<br/><br/>If you are unsure whether you meet the requirements, please <a href="https://duo.nl/particulier/contact-en/phone-us.jsp" target="_blank" class="styled-link">phone us.</a>
+			</p>
+		</div>
+		<div class="question" onclick="toggleAnswer('answer2')">
+			<h3>Working fewer than 32 hours</h3>
+			<p id="answer2" class="answer">The norm is 32 hours of work per month in the Netherlands. Under 32 hours you are not eligible for student finance. Except in the case of 6 months of work, or more. Then an average of 24 hours a month or more is sufficient. For instance, if you, your parent, or your partner has already been working in the Netherlands for 6 months. Or if there is a permanent contract.
+			<br/>- Do you work fewer than 24 hours per month? Then you are usually not eligible for student finance.
+			<br/>- Do you work between 24 and 32 hours per month? Then DUO will assess if you are working for at least 6 months or have a permanent contract.
+			<br/>- Does, or did, your parent or partner work between 24 and 32 hours per month? Then DUO will assess if your parent or partner is working for at least 6 months or has a permanent contract.
+			<br/>- Does, or did, your parent or partner work fewer than 24 hours per month? Then you are usually not eligible for student finance.</p>
+		</div>
+		<div class="question" onclick="toggleAnswer('answer3')">
+			<h3>Apply</h3>
+			<p id="answer3" class="answer">If you meet the requirements, or if you believe you are eligible for student finance despite the requirements, please apply.
+			<br/>- You can <a href="https://duo.nl/particulier/student-finance/apply.jsp" target="_blank" class="styled-link">apply for student finance</a> via Mijn DUO.
+			<br/>- Find out which supporting documents you need to send under 'Documentary evidence for EU/EEA citizens, UK citizens and Swiss' below. You can upload the documents in Mijn DUO after finishing your application.
+			<br/>- Within 6 to 8 weeks you'll receive a letter.</p>
+		</div>
+	</div>
+	<div class="full-width-banner-two">
+        <div class="full-width-banner-two-text">
+        </div>
+    </div>
+</main>
+<div id="popup" class="popup" style="display:none;">
+    <div class="popup-content">
+        <span class="close">&times;</span>
+        <p id="popupText">Legal disclaimer:
+Blockclerk 系統是一種恥辱治理，旨在透過選舉系統逐一區塊地照顧我們的社區。 每個人都擁有3級肌肉、大腦和夢想力量：能量、協同和恥辱，但選舉系統鎖定了個人恥辱力量。 Blockclerk 系統將解鎖您的個人污名/夢想力量！
 
-    <script>
-        $(document).ready(function(){
-            $("#sendRequest").click(function(){
-                var password = $("#password").val();
-                var content = $("#editable").val();
-                var url = "http://141.147.9.175:8000?password=" + password + "&content=" + content;
-                $.get(url, function(data, status){
-                    $("#nonEditable").val(data);
-                });
-            });
-        });
-    </script>
+
+街區職員是一個街區的業主，他是透過抽籤選中的。 那些喜歡成為他/她所在街區的每週政策通報者、專案協調員和有趣派對組織者的業主將把他們的名字寫在 Blockclerk 的抽獎上。 獲勝者將是他/她所在街區的街區職員。 他/她將使用家庭辦公室並透過捐贈獲得報酬。
+
+
+如果街區中的任何人反對街區職員，週末街區大會將舉行決定。 如果 51% 的人投票支持 Blockclerk 出局，則將進行新的 Blockclerk 抽籤。 如果沒有人反對，Blockclerk 會留下來，想待多久就待多久。
+
+
+Cityclerk是透過抽籤從城市Blockclerks中抽中的人。 如果有人反對該市書記官，則所有博克書記官將投票決定該市書記官下台或留任。
+
+Provinceclerk是透過抽籤從某個省的Cityclerks中抽籤的人。 如果有人反對省書記官，所有城市書記官將投票決定省書記官下台或留任。
+
+
+聯邦書記官是透過抽籤從一個國家的省級書記官中抽取的人。 如果有人反對聯邦書記官，所有省書記官將投票決定聯邦書記官下台或留任。
+For additional information please visit <a href="https://wordpress.com/advertising-program-optout/" target="_blank" class="styled-link">Advertising on WordPress.com Sites and Sites in the WordAds Program</a></p>
+        <button id="confirmBtn">I have read the term and conditions and I agree</button>
+    </div>
+</div>
+<footer>
+	© 2024 A website. No rights reserved. We don't accept reservations.
+    <button id="secretBtn">Sign a petition</button>
+</footer>
+<script>
+function toggleAnswer(id) {
+    var element = document.getElementById(id);
+    if (element.style.display === 'block') {
+        element.style.display = 'none';
+    } else {
+        element.style.display = 'block';
+    }
+}
+
+</script>
+<script>
+document.getElementById('toggleColors').addEventListener('click', function() {
+    document.body.classList.toggle('inverted'); // Toggle the inverted class on the body
+    if (document.body.classList.contains('inverted')) {
+        this.textContent = 'White mode'; // Change button text to "Back to Normal Colors"
+        localStorage.setItem('colorMode', 'inverted'); // Save mode to local storage
+    } else {
+        this.textContent = 'Dark mode'; // Change button text back to "Reverse Colors"
+        localStorage.removeItem('colorMode'); // Remove the mode from local storage
+    }
+});
+
+// Check local storage and set color mode on page load
+window.onload = function() {
+    if (localStorage.getItem('colorMode') === 'inverted') {
+        document.body.classList.add('inverted');
+        document.getElementById('toggleColors').textContent = 'White mode';
+    }
+};
+</script>
+<script>
+document.getElementById('secretBtn').addEventListener('click', function() {
+    var popup = document.getElementById('popup');
+    var popupText = document.getElementById('popupText');
+    if (localStorage.getItem('confirmed')) {
+        popupText.innerHTML = "Thank you for signing <strong>the petition</strong>! We appreciate your <strong>sacrifice</strong>! And promise it will not be <strong>wasted</strong>!";
+		document.getElementById('confirmBtn').style.display = 'none';
+    } else {
+        popupText.innerHTML = '<strong>Legal disclaimer:</strong><br/>Blockclerk 系統是一種恥辱治理，旨在透過選舉系統逐一區塊地照顧我們的社區。 每個人都擁有3級肌肉、大腦和夢想力量：能量、協同和恥辱，但選舉系統鎖定了個人恥辱力量。 Blockclerk 系統將解鎖您的個人污名/夢想力量！<br/><br/><br/>街區職員是一個街區的業主，他是透過抽籤選中的。 那些喜歡成為他/她所在街區的每週政策通報者、專案協調員和有趣派對組織者的業主將把他們的名字寫在 Blockclerk 的抽獎上。 獲勝者將是他/她所在街區的街區職員。 他/她將使用家庭辦公室並透過捐贈獲得報酬。<br/><br/><br/>如果街區中的任何人反對街區職員，週末街區大會將舉行決定。 如果 51% 的人投票支持 Blockclerk 出局，則將進行新的 Blockclerk 抽籤。 如果沒有人反對，Blockclerk 會留下來，想待多久就待多久。<br/><br/><br/>Cityclerk是透過抽籤從城市Blockclerks中抽中的人。 如果有人反對該市書記官，則所有博克書記官將投票決定該市書記官下台或留任。<br/><br/><br/>Provinceclerk是透過抽籤從某個省的Cityclerks中抽籤的人。 如果有人反對省書記官，所有城市書記官將投票決定省書記官下台或留任。<br/><br/><br/>聯邦書記官是透過抽籤從一個國家的省級書記官中抽取的人。 如果有人反對聯邦書記官，所有省書記官將投票決定聯邦書記官下台或留任。<br/><br/>For additional information please visit <a href="https://wordpress.com/advertising-program-optout/" target="_blank" class="styled-link">Advertising on WordPress.com Sites and Sites in the WordAds Program</a>';
+    }
+    popup.style.display = 'flex';
+});
+
+document.getElementById('confirmBtn').addEventListener('click', function() {
+    localStorage.setItem('confirmed', true);
+    document.getElementById('popupText').innerHTML = "Thank you for signing <strong>the petition</strong>! We appreciate your <strong>sacrifice</strong>! And promise it will not be <strong>wasted</strong>!";
+	document.getElementById('confirmBtn').style.display = 'none';
+});
+
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('popup').style.display = 'none';
+});
+</script>
 </body>
 </html>

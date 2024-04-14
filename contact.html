@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Death threats</title>
+<link rel="stylesheet" href="styles.css"> <!-- Assuming you are using a centralized CSS file -->
+<style>
+    /* Additional styling specific to the contact page */
+    .contact-info, .social-media {
+        background-color: #FFF;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        border-left: 5px solid var(--primary-color);
+    }
+
+    .contact-info h1, .social-media h1 {
+        color: var(--primary-color);
+    }
+
+    .contact-info p, .social-media a {
+        margin: 10px 0;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .social-media a {
+        display: inline-block;
+        margin-right: 20px;
+        color: var(--primary-color);
+        text-decoration: none;
+    }
+
+    .social-media a:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+<header>
+    <div class="header-left">
+        <div class="logo"><a href="index.html">deloreg.pl</a></div>
+    </div>
+    <ul class="navigation">
+        <li><a href="index.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="projects.html">Personalities</a></li>
+        <li><a href="contact.html">Death threats</a></li>
+        <li><a href="mental.html">Mental statement</a></li>
+    </ul>
+    <div class="header-right" align="right">
+        <button id="toggleColors">Dark mode</button>
+    </div>
+</header>
+<main>
+	<p>you can send death threats to my discord account <strong>erykgroch</strong> and i will respond as if im scared</p>
+	
+	<p><a href="big_five_report.pdf" target="_blank">My www.understandmyself.com Jordan Peterson test results</a><a href="big_five_report.pdf?force_download=True" class="button-download" target="_blank">Download</a></p>
+	<!-- Blog Post 1 
+    <div class="contact-info">
+        <h1>Contact Information</h1>
+        <p><strong>Phone:</strong> (123) 456-7890</p>
+        <p><strong>Email:</strong> info@example.com</p>
+        <p><strong>Address:</strong> 123 Some St, City, Country 12345</p>
+    </div>
+
+    <div class="social-media">
+        <h1>Follow Us</h1>
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+    </div>-->
+</main>
+<div id="popup" class="popup" style="display:none;">
+    <div class="popup-content">
+        <span class="close">&times;</span>
+        <p id="popupText">Legal disclaimer:
+Blockclerk 系統是一種恥辱治理，旨在透過選舉系統逐一區塊地照顧我們的社區。 每個人都擁有3級肌肉、大腦和夢想力量：能量、協同和恥辱，但選舉系統鎖定了個人恥辱力量。 Blockclerk 系統將解鎖您的個人污名/夢想力量！
+
+
+街區職員是一個街區的業主，他是透過抽籤選中的。 那些喜歡成為他/她所在街區的每週政策通報者、專案協調員和有趣派對組織者的業主將把他們的名字寫在 Blockclerk 的抽獎上。 獲勝者將是他/她所在街區的街區職員。 他/她將使用家庭辦公室並透過捐贈獲得報酬。
+
+
+如果街區中的任何人反對街區職員，週末街區大會將舉行決定。 如果 51% 的人投票支持 Blockclerk 出局，則將進行新的 Blockclerk 抽籤。 如果沒有人反對，Blockclerk 會留下來，想待多久就待多久。
+
+
+Cityclerk是透過抽籤從城市Blockclerks中抽中的人。 如果有人反對該市書記官，則所有博克書記官將投票決定該市書記官下台或留任。
+
+Provinceclerk是透過抽籤從某個省的Cityclerks中抽籤的人。 如果有人反對省書記官，所有城市書記官將投票決定省書記官下台或留任。
+
+
+聯邦書記官是透過抽籤從一個國家的省級書記官中抽取的人。 如果有人反對聯邦書記官，所有省書記官將投票決定聯邦書記官下台或留任。
+For additional information please visit <a href="https://wordpress.com/advertising-program-optout/" class="styled-link">Advertising on WordPress.com Sites and Sites in the WordAds Program</a></p>
+        <button id="confirmBtn">I have read the term and conditions and I agree</button>
+    </div>
+</div>
+<footer>
+	© 2024 A website. No rights reserved. We don't accept reservations.
+    <button id="secretBtn">Sign a petition</button>
+</footer>
+<script>
+document.getElementById('toggleColors').addEventListener('click', function() {
+    document.body.classList.toggle('inverted'); // Toggle the inverted class on the body
+    if (document.body.classList.contains('inverted')) {
+        this.textContent = 'White mode'; // Change button text to "Back to Normal Colors"
+        localStorage.setItem('colorMode', 'inverted'); // Save mode to local storage
+    } else {
+        this.textContent = 'Dark mode'; // Change button text back to "Reverse Colors"
+        localStorage.removeItem('colorMode'); // Remove the mode from local storage
+    }
+});
+
+// Check local storage and set color mode on page load
+window.onload = function() {
+    if (localStorage.getItem('colorMode') === 'inverted') {
+        document.body.classList.add('inverted');
+        document.getElementById('toggleColors').textContent = 'White mode';
+    }
+};
+</script>
+<script>
+document.getElementById('secretBtn').addEventListener('click', function() {
+    var popup = document.getElementById('popup');
+    var popupText = document.getElementById('popupText');
+    if (localStorage.getItem('confirmed')) {
+        popupText.innerHTML = "Thank you for signing <strong>the petition</strong>! We appreciate your <strong>sacrifice</strong>! And promise it will not be <strong>wasted</strong>!";
+		document.getElementById('confirmBtn').style.display = 'none';
+    } else {
+        popupText.innerHTML = '<strong>Legal disclaimer:</strong><br/>Blockclerk 系統是一種恥辱治理，旨在透過選舉系統逐一區塊地照顧我們的社區。 每個人都擁有3級肌肉、大腦和夢想力量：能量、協同和恥辱，但選舉系統鎖定了個人恥辱力量。 Blockclerk 系統將解鎖您的個人污名/夢想力量！<br/><br/><br/>街區職員是一個街區的業主，他是透過抽籤選中的。 那些喜歡成為他/她所在街區的每週政策通報者、專案協調員和有趣派對組織者的業主將把他們的名字寫在 Blockclerk 的抽獎上。 獲勝者將是他/她所在街區的街區職員。 他/她將使用家庭辦公室並透過捐贈獲得報酬。<br/><br/><br/>如果街區中的任何人反對街區職員，週末街區大會將舉行決定。 如果 51% 的人投票支持 Blockclerk 出局，則將進行新的 Blockclerk 抽籤。 如果沒有人反對，Blockclerk 會留下來，想待多久就待多久。<br/><br/><br/>Cityclerk是透過抽籤從城市Blockclerks中抽中的人。 如果有人反對該市書記官，則所有博克書記官將投票決定該市書記官下台或留任。<br/><br/><br/>Provinceclerk是透過抽籤從某個省的Cityclerks中抽籤的人。 如果有人反對省書記官，所有城市書記官將投票決定省書記官下台或留任。<br/><br/><br/>聯邦書記官是透過抽籤從一個國家的省級書記官中抽取的人。 如果有人反對聯邦書記官，所有省書記官將投票決定聯邦書記官下台或留任。<br/><br/>For additional information please visit <a href="https://wordpress.com/advertising-program-optout/" target="_blank" class="styled-link">Advertising on WordPress.com Sites and Sites in the WordAds Program</a>';
+    }
+    popup.style.display = 'flex';
+});
+
+document.getElementById('confirmBtn').addEventListener('click', function() {
+    localStorage.setItem('confirmed', true);
+    document.getElementById('popupText').innerHTML = "Thank you for signing <strong>the petition</strong>! We appreciate your <strong>sacrifice</strong>! And promise it will not be <strong>wasted</strong>!";
+	document.getElementById('confirmBtn').style.display = 'none';
+});
+
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('popup').style.display = 'none';
+});
+</script>
+</body>
+</html>
